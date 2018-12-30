@@ -53,17 +53,26 @@ function makeRequest(url) {
 );
 
 it(`Serves the index page`, () => {
-  return makeRequest("https://imagecdn.app/").then(res => {
+  return makeRequest("https://imagecdn.app").then(res => {
     expect(res).to.be.html;
     expect(res).to.not.redirect;
     expect(res).to.have.status(200);
   });
 });
 
-it(`Serves the 404 page`, () => {
+it(`Serves the 404 error page`, () => {
   const url = `https://imagecdn.app/not-found-${Date.now()}`;
   return makeRequest(url).then(res => {
     expect(res).to.be.have.status(404);
+    expect(res).to.be.html;
+    expect(res).to.not.redirect;
+  });
+});
+
+it(`Serves the 503 error page`, () => {
+  const url = `https://imagecdn.app/__error/503?_date=${Date.now()}`;
+  return makeRequest(url).then(res => {
+    expect(res).to.be.have.status(503);
     expect(res).to.be.html;
     expect(res).to.not.redirect;
   });
