@@ -22,4 +22,9 @@ plugins:
 
 exclude:
     - node_modules
-    - src
+    - package-lock.json
+    - package.json
+    - .dockerignore
+    - Dockerfile
+    - Makefile
+    - README.md

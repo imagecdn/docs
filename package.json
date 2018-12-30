@@ -1,0 +1,25 @@
+{
+  "name": "@imagecdn/docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.7.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --colors --slow 200"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagecdn/docs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/imagecdn/docs#readme"
+}
