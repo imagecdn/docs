@@ -6,11 +6,6 @@ title: Documentation
 
 <h1 class="display-4">Documentation</h1>
 
-<div class="alert alert-warning" role="alert">
-  The documentation below is for <strong>v1</strong> of ImageCDN. Images following this format will work after the release of <strong>v2</strong>, but will not support new features.
-</div>
-
-
 <br>
 <h3>GET /v2/image/<i>{image}</i></h3>
 <p>Primary endpoint of ImageCDN.</p>
@@ -48,9 +43,19 @@ title: Documentation
     </p></td>
   </tr>
   <tr>
-    <th scope="row"><code>fill</code></th>
+    <th scope="row"><code>format</code></th>
     <td><p>
-        How to fill the space provided by height/width.
+        Override the format output by the service.<br />
+        Options are: `webp`, `jpg`, `png`.<br />
+        <i>Defaults to the best format supported by the current browser.</i>
+    </p></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>fit</code></th>
+    <td><p>
+        How to fill the space provided by height/width.<br />
+        Options are: `cover`, `contain`, `fill`, `inside` or `outside`.<br />
+        <i>Defaults to: `cover`</i>.
     </p></td>
   </tr>
 </table>
